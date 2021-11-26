@@ -1,7 +1,8 @@
 <?php
 $videoIds = [
-    'Lqr6QtBflRM',
-    'Pf58Fm2zQwY'
+    'Pv1Xhpz7FMI',
+    'gPv4sMNNVJg',
+    'lG7l8XfZ-Ho'
 ];
 ?>
 <section id="music" class="listen">
