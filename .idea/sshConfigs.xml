@@ -5,6 +5,7 @@
       <sshConfig authType="PASSWORD" host="506600.test-my-website.de" id="bcbfa3e4-8ac3-4d47-9bd2-ca3c940ff2ab" port="22" customName="Michael" nameFormat="CUSTOM" username="131386f102416">
         <option name="customName" value="Michael" />
       </sshConfig>
+      <sshConfig authType="PASSWORD" host="ssh.strato.de" id="400c70f1-2015-424b-ba26-d22f06cdd29d" port="22" nameFormat="DESCRIPTIVE" username="sftp_whiteleaf@whiteleaf.de" />
     </configs>
   </component>
 </project>

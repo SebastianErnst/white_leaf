@@ -16,6 +16,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="8159aceb-ea94-4427-8ea6-a8b60b18478a" name="White Leaf" url="http://ssh.strato.de">
+        <fileTransfer accessType="SFTP" host="ssh.strato.de" port="22" sshConfigId="400c70f1-2015-424b-ba26-d22f06cdd29d" sshConfig="sftp_whiteleaf@whiteleaf.de@ssh.strato.de:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
