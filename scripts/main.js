@@ -8,7 +8,6 @@ import { smoothScroll } from "foundation-sites";
 class MainApplication {
     constructor() {
         $(document).foundation();
-        // window.particlesJS.load('particles-js-header', 'assets/particles.json');
 
         $('.burger-menu').on('click', () => {
             $('.main-menu').toggleClass('is-open');

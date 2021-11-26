@@ -17,12 +17,12 @@ header {
             justify-content: space-between;
             align-items: center;
             padding: {
-                top: $mainMenuHeightMobile * 2;
-                bottom: $mainMenuHeightMobile;
+                top: $mainMenuHeightMobile * 1.35;
+                bottom: $mainMenuHeightMobile * 0.5;
             }
             @include breakpoint(large) {
                 padding: {
-                    top: $mainMenuHeightDesktop * 2;
+                    top: $mainMenuHeightDesktop * 1.35;
                     bottom: $mainMenuHeightDesktop;
                 }
             }
@@ -32,6 +32,8 @@ header {
         justify-self: flex-start;
     }
     .album {
+        @include reset-anchor-hover();
+        display: block;
         position: relative;
         width: 250px;
         height: 250px;
@@ -43,59 +45,25 @@ header {
             height: auto;
             width: 100%;
         }
-    }
-    h1 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0;
-        padding: $spaceSmall;
-        text-align: center;
-    }
-    h2 {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0;
-        padding: $spaceSmall;
-        text-align: center;
-        &::before,
-        &::after {
-            content: none;
-        }
-    }
-    .icon-link-list {
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: 0;
-        padding: $spaceSmall;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        margin: -15px;
-        li {
-            margin: 15px;
-            &.youtube {
-                padding-top: 4px;
-            }
-            a {
-                @include reset-button();
-                display: inline-block;
-                svg {
-                    transition: $anchorTransitionTimeAndEasingOut;
-                    fill: $fontLight;
-                    &:hover {
-                        transition: $anchorTransitionTimeAndEasingIn;
-                        fill: $ctaBlue;
-                    }
+        &:hover {
+            .button {
+                color: $fontDark;
+                &::before {
+                    transition: transform $anchorTransitionTimeAndEasingIn;
+                    transform: translateY(0);
+                }
+                span {
+                    transition: color $anchorTransitionTimeAndEasingIn;
                 }
             }
         }
+    }
+    .button {
+        position: absolute;
+        top: calc(100% + #{$spaceSmall});
+        left: 0;
+        right: 0;
+        text-align: center;
     }
     .scroll-down-animation {
         .mouse {

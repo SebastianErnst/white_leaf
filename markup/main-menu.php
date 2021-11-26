@@ -5,7 +5,7 @@
                  data-animation-duration="500"
                  data-animation-easing="swing"
                  data-threshold="200">
-                <a class="logo-mobile" href="#header">
+                <a class="logo-mobile" href="#music">
                     <img src="assets/logo.png" alt="White Leaf - Logo">
                 </a>
             </div>
@@ -13,14 +13,14 @@
                 data-animation-duration="500"
                 data-animation-easing="swing"
                 data-threshold="200">
-                <li><a href="#band">Band</a></li>
-                <li><a href="#music">Music</a></li>
                 <li class="logo-item">
-                    <a class="logo-desktop" href="#header">
+                    <a class="logo-desktop" href="#music">
                         <img src="assets/logo.png" alt="White Leaf - Logo">
                     </a>
                 </li>
-                <li><a href="#bio">Bio</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#merchandise">Merchandise</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger-menu">

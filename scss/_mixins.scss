@@ -15,6 +15,17 @@
     }
 }
 
+@mixin reset-anchor-hover() {
+    cursor: pointer;
+    transition: unset;
+    background: unset;
+    padding: 0;
+    &:hover {
+        transition: unset;
+        background: unset;
+    }
+}
+
 @mixin anchor-hover-property() {
     background-size: 2px 100%;
 }
@@ -48,4 +59,11 @@
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+@mixin reset-list() {
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
 }

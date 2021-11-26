@@ -1,0 +1,21 @@
+@charset "UTF_8";
+
+.merchandise-list {
+    @include reset-list();
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: $spaceXSmall;
+    margin: {
+        bottom: $spaceSmall;
+    }
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(4, 1fr);
+        margin: {
+            bottom: $spaceNormal;
+        }
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+button,
+.button {
+    @include reset-button();
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    color: $fontLight;
+    padding: {
+        top: $spaceXSmall;
+        right: $spaceNormal;
+        bottom: $spaceXSmall;
+        left: $spaceNormal;
+    }
+    background: {
+        color: $ctaRed;
+    }
+    font: {
+        family: $fontFamilyHeading;
+        weight: 500;
+        size: $fontSizeXLarge;
+    }
+    &:hover {
+        color: $fontDark;
+        &::before {
+            transition: transform $anchorTransitionTimeAndEasingIn;
+            transform: translateY(0);
+        }
+        span {
+            transition: color $anchorTransitionTimeAndEasingIn;
+        }
+    }
+    &::before {
+        transition: transform $anchorTransitionTimeAndEasingOut;
+        content: "";
+        @include absolute-stretch();
+        background: {
+            color: $white;
+        }
+        transform: translateY(100%);
+    }
+    span {
+        position: relative;
+        transition: color $anchorTransitionTimeAndEasingOut;
+    }
+}

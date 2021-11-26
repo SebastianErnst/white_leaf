@@ -147,3 +147,10 @@ blockquote {
 strong {
     font-weight: 900;
 }
+
+p {
+    margin: {
+        top: 0;
+        bottom: $spaceNormal;
+    }
+}
