@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+header {
+    position: relative;
+    z-index: z-index($z-index, background);
+    height: 100vh;
+    min-width: 100%;
+    overflow: hidden;
+    .main-wrapper {
+        height: inherit;
+        .inner-wrapper {
+            height: inherit;
+            display: flex;
+            flex: {
+                direction: column;
+            }
+            justify-content: space-between;
+            align-items: center;
+            padding: {
+                top: $mainMenuHeightMobile * 2;
+                bottom: $mainMenuHeightMobile;
+            }
+            @include breakpoint(large) {
+                padding: {
+                    top: $mainMenuHeightDesktop * 2;
+                    bottom: $mainMenuHeightDesktop;
+                }
+            }
+        }
+    }
+    .header {
+        justify-self: flex-start;
+    }
+    .album {
+        position: relative;
+        width: 250px;
+        height: 250px;
+        @include breakpoint(medium) {
+            width: 350px;
+            height: 350px;
+        }
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+    h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: $spaceSmall;
+        text-align: center;
+    }
+    h2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: $spaceSmall;
+        text-align: center;
+        &::before,
+        &::after {
+            content: none;
+        }
+    }
+    .icon-link-list {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0;
+        padding: $spaceSmall;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: -15px;
+        li {
+            margin: 15px;
+            &.youtube {
+                padding-top: 4px;
+            }
+            a {
+                @include reset-button();
+                display: inline-block;
+                svg {
+                    transition: $anchorTransitionTimeAndEasingOut;
+                    fill: $fontLight;
+                    &:hover {
+                        transition: $anchorTransitionTimeAndEasingIn;
+                        fill: $ctaBlue;
+                    }
+                }
+            }
+        }
+    }
+    .scroll-down-animation {
+        .mouse {
+            margin: 0 auto;
+            display: block;
+            border-radius: 50px;
+            border: 1px solid #fff;
+            height: 80px;
+            width: 40px;
+            position: relative;
+        }
+        .move {
+            position: absolute;
+            background-color: $fontLight;
+            height: 5px;
+            width: 5px;
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: move 2s linear infinite;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(-50%, 8px);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, 40px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, 60px);
+                opacity: 0;
+            }
+        }
+    }
+}

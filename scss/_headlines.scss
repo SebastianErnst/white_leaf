@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+h1 {
+    font: {
+        family: $fontFamilyHeading;
+        weight: 800;
+        size: $fontSizeXXLarge;
+    }
+    @include breakpoint(medium) {
+        font: {
+            size: $fontSizeXXXLarge;
+        }
+    }
+}
+
+h1,
+h2 {
+    margin: {
+        top: 0;
+        bottom: $spaceSmall;
+    }
+    position: relative;
+    line-height: 1;
+    display: inline-block;
+    color: $fontLight;
+    letter-spacing: 5px;
+    padding: 10px;
+}
+
+h2 {
+    font: {
+        family: $fontFamilyHeading;
+        weight: 700;
+        size: $fontSizeXLarge;
+    }
+    @include breakpoint(medium) {
+        font: {
+            size: $fontSizeXXLarge;
+        }
+    }
+    background:
+        linear-gradient($starLineColor, $starLineColor) bottom left / 100% 1px,
+        linear-gradient($starLineColor, $starLineColor) left bottom / 1px 50%;
+    background-repeat:no-repeat;
+    &::before {
+        content: "";
+        background: $ctaRed;
+        position: absolute;
+        left: -2px;
+        bottom: -2px;
+        height: 6px;
+        width: 6px;
+        border-radius: 50%;
+    }
+}
+
+h3 {
+    margin: {
+        top: 0;
+        bottom: $spaceXSmall;
+    }
+    line-height: 1;
+    display: inline-block;
+    color: $fontLight;
+    font: {
+        family: $fontFamilyHeading;
+        weight: 500;
+        size: $fontSizeXLarge;
+    }
+}

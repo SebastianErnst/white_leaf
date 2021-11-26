@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font: {
+        size: 106.25%;
+        family: 'Lato', sans-serif;
+    }
+    color: $fontLight;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    transform: scale(1.0);
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("../assets/bg-2.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+section {
+    padding-bottom: $spaceNormal;
+    @include breakpoint(medium) {
+        padding-bottom: $spaceNormal;
+    }
+    @include breakpoint(large) {
+        padding-bottom: $spaceNormal;
+    }
+    position: relative;
+    background: inherit;
+    .main-wrapper {
+        position: relative;
+        background: rgba($bgColorDark, 0.8);
+        overflow: hidden;
+        border: 1px solid rgba(white, 0.25);
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: "";
+        }
+        > * {
+            position: relative;
+            z-index: 1;
+        }
+    }
+    &:last-child {
+        padding-bottom: 0;
+    }
+    &.additional-content {
+        padding-bottom: $spaceNormal;
+        padding-top: $spaceNormal;
+        @include breakpoint(medium) {
+            padding-bottom: $spaceLarge;
+            padding-top: $spaceLarge;
+        }
+        @include breakpoint(large) {
+            padding-bottom: $spaceLarge*1.5;
+            padding-top: $spaceLarge*1.5;
+        }
+    }
+}
+
+.main-wrapper {
+    position: relative;
+    max-width: 1060px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.inner-wrapper {
+    padding: $spaceXSmall;
+    @include breakpoint(medium) {
+        padding: $spaceSmall;
+    }
+    @include breakpoint(large) {
+        padding: $spaceNormal;
+    }
+}
+
+.particles-js {
+    z-index: z-index($z-index, particleJS);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+blockquote {
+    margin: {
+        top: 0;
+        right: 0;
+        bottom: $spaceXSmall;
+        left: 0;
+    }
+    font: {
+        style: italic;
+        size: $fontSizeLarge;
+    }
+    &::before,
+    &::after {
+        font-size: $fontSizeXLarge;
+        color: $ctaRed;
+    }
+    &::after {
+        content: "\"";
+    }
+    &::before {
+        content: "\"";
+    }
+}
+
+.author {
+    display: inline-block;
+    margin-bottom: $spaceSmall;
+    &::before {
+        content: "\2014\00a0";
+        color: $ctaRed;
+    }
+}
+
+strong {
+    font-weight: 900;
+}

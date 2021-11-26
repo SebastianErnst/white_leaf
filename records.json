@@ -1,0 +1,35 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "node_modules/expose-loader/index.js?jQuery!node_modules/expose-loader/index.js?$!node_modules/jquery/dist/jquery.js": 0,
+      "node_modules/webpack/buildin/global.js": 1,
+      "node_modules/expose-loader/index.js?$!node_modules/jquery/dist/jquery.js": 2,
+      "node_modules/jquery/dist/jquery.js": 3,
+      "node_modules/lightgallery/dist/js/lightgallery.js": 4,
+      "node_modules/lg-video/dist/lg-video.js": 5,
+      "scripts/main.js c81cc7505e22fff47122489270e96a07": 6
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6
+    }
+  },
+  "chunks": {
+    "byName": {
+      "main": 0,
+      "runtime": 1,
+      "vendor": 2
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2
+    ]
+  }
+}

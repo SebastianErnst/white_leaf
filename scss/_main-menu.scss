@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+.main-menu {
+    font-family: $fontFamilyHeading;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: $bgColorDark;
+    border-bottom: 1px solid rgba(white, 0.15);
+    .main-wrapper {
+        .inner-wrapper {
+            height: $mainMenuHeightMobile;
+            @include breakpoint(large) {
+                height: $mainMenuHeightDesktop;
+            }
+            padding: {
+                top: 0;
+                bottom: 0;
+            }
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+    }
+    .logo-item {
+        display: none;
+        @include breakpoint(large) {
+            display: block;
+            padding: {
+                left: $spaceSmall;
+                right: $spaceSmall;
+            }
+        }
+    }
+    .logo-mobile {
+        padding: 0;
+        $sizeSmall: 60px;
+        left: $spaceXSmall;
+        width: rem-calc($sizeSmall);
+        height: rem-calc($sizeSmall);
+        @include breakpoint(medium) {
+            left: $spaceSmall;
+        }
+        @include breakpoint(large) {
+            display: none;
+        }
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        background: {
+            color: black;
+            size: 0;
+        }
+        z-index: z-index($z-index, content);
+
+        overflow: hidden;
+        img {
+            transition: transform 250ms ease-out;
+            position: relative;
+            width: 100%;
+            height: auto;
+            line-height: 0;
+        }
+    }
+    .logo-desktop {
+        padding: 0;
+        $sizeSmall: 4px;
+        //left: $spaceXSmall;
+        width: rem-calc($sizeSmall);
+        height: rem-calc($sizeSmall);
+        //@include breakpoint(medium) {
+        //    left: $spaceSmall;
+        //}
+        @include breakpoint(large) {
+            $sizeLarge: 60px;
+            width: rem-calc($sizeLarge);
+            height: rem-calc($sizeLarge);
+            //left: $spaceNormal;
+        }
+        //position: absolute;
+        //top: 50%;
+        //transform: translateY(-50%);
+        display: block;
+        background: {
+            color: black;
+            size: 0;
+        }
+        z-index: z-index($z-index, content);
+
+        overflow: hidden;
+        img {
+            transition: transform 250ms ease-out;
+            position: relative;
+            width: 100%;
+            height: auto;
+            line-height: 0;
+        }
+    }
+    &.is-open {
+        ul {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .burger-menu {
+            .top {
+                transform: translateY(-50%) rotate(45deg);
+                top: 50%;
+            }
+            .mid {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            .bot {
+                transform: translateY(50%) rotate(-45deg);
+                bottom: 50%;
+            }
+        }
+    }
+    .burger-menu {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        width: 40px;
+        height: 25px;
+        margin-left: auto;
+        @include breakpoint(large) {
+            display: none;
+        }
+        .top,
+        .mid,
+        .bot {
+            transition: opacity 250ms, transform 250ms, top 250ms, bottom 250ms;
+            transition-timing-function: cubic-bezier(.48,.57,.03,.99);
+            position: absolute;
+            border: {
+                radius: $global-radius;
+            }
+            background: {
+                color: $fontLight;
+            }
+            height: 5px;
+            width: 100%;
+        }
+        .top {
+            top: 0;
+            left: 0;
+        }
+        .mid {
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .bot {
+            bottom: 0;
+            left: 0;
+        }
+    }
+    ul {
+        opacity: 0;
+        position: absolute;
+        top: $mainMenuHeightMobile;
+        background-color: $bgColorDark;
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        justify-content: center;
+        align-items: center;
+        flex: {
+            direction: column
+        }
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 250ms, opacity 250ms;
+        transition-timing-function: cubic-bezier(.48,.57,.03,.99);
+        @include breakpoint(large) {
+            overflow: unset;
+            background-color: unset;
+            max-height: none;
+            opacity: 1;
+            top: unset;
+            position: relative;
+            padding: 0;
+            flex: {
+                direction: row;
+            }
+        }
+        li {
+            margin-bottom: $spaceSmall;
+            @include breakpoint(large) {
+                margin-bottom: 0;
+            }
+            a {
+                padding: {
+                    left: 20px;
+                    right: 20px;
+                }
+                letter-spacing: rem-calc(5);
+                font: {
+                    size: $fontSizeXXLarge;
+                }
+            }
+        }
+    }
+}

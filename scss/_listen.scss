@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.listen {
+    .main-wrapper {
+        position: relative;
+        z-index: z-index($z-index, content);
+    }
+    .gallery {
+        .gallery-list {
+            list-style: none;
+            display: flex;
+            flex: {
+                wrap: wrap;
+            }
+            padding: 0;
+            margin: -5px;
+            li {
+                width: 100%;
+                @include breakpoint(medium) {
+                    width: 50%;
+                }
+                padding: 5px;
+                .hover-wrapper {
+                    @include anchor-hover();
+                    padding: 1px;
+                    .video {
+                        position: relative;
+                        padding: 1px;
+                        overflow: hidden;
+                        &::before {
+                            content: "";
+                            display: block;
+                            width: 100%;
+                            padding-bottom: 56.25%;
+                        }
+                    }
+                    &:hover {
+                        img {
+                            transform: translate(-50%, -50%) scale(1.2);
+                            transition: transform $anchorTransitionTimeAndEasingIn;
+                        }
+                        .play-button {
+                            &::after {
+                                transition: border-color $anchorTransitionTimeAndEasingIn;
+                                border-color: transparent transparent transparent $ctaRed;
+                            }
+                        }
+                    }
+                    img {
+                        @include absolute-center();
+                        transition: transform $anchorTransitionTimeAndEasingOut;
+                        transform-origin: center center;
+                        width: 100%;
+                        height: auto;
+                        min-height: 100%;
+                    }
+                    .play-button {
+                        //circle
+                        @include absolute-center();
+                        width: 75px;
+                        height: 75px;
+                        display: block;
+                        pointer-events: none;
+                        border-radius: 50%;
+                        padding: 0;
+                        margin: 0 auto;
+                        user-select: none;
+                        background-color: rgba($bgColorLight, 0.5);
+                        &::after {
+                            //play button
+                            @include absolute-center();
+                            display: block;
+                            content: '';
+                            box-sizing: border-box;
+                            border-color: transparent transparent transparent $fontLight;
+                            border-style: solid;
+                            border-width: 13px 0 13px 20px;
+                            transition: border-color $anchorTransitionTimeAndEasingOut;
+                        }
+                    }
+                }
+                iframe {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
